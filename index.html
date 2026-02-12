@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galaxy Profile</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SPACE -->
+  <div class="space">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+  </div>
+
+  <!-- EFFECT LAYERS -->
+  <div class="nebula"></div>
+  <div class="orbit"></div>
+  <div class="planet planet1"></div>
+  <div class="planet planet2"></div>
+  <div class="mouse-glow" id="glow"></div>
+  <div class="grain"></div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <img src="akhdan.jpeg" class="photo">
+    <h1>Akhdan</h1>
+    <p class="role">Seorang Pelajar</p>
+
+    <div class="sections">
+
+      <!-- Tentang -->
+      <div class="box">
+        <h2>About Me</h2>
+        <p>
+          Saya pelajar SMP Chandra Buana kelas 9 angkatan 2025–2026.
+          Bercita-cita menjadi Programmer dan IT Support.
+        </p>
+      </div>
+
+      <!-- Hobi -->
+      <div class="box">
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Badminton</li>
+          <li>Ngoding</li>
+          <li>Desain</li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div class="box">
+        <h2>Contact</h2>
+        <div class="contact">
+          <a href="mailto:akhdanfaqih731@gmail.com" class="icon-btn">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg">
+          </a>
+          <a href="https://wa.me/6289518630715" class="icon-btn" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg">
+          </a>
+          <a href="https://discord.com/users/dannn2485" class="icon-btn" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg">
+          </a>
+          <!-- GITHUB -->
+          <a href="https://github.com/AkhdanFaqih" class="icon-btn" target="_blank">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg">
+          </a>
+        </div>
+      </div>
+
+      <!-- KARTU KARYA -->
+      <div class="box karya-box">
+        <h2>My Work</h2>
+
+        <div class="karya-grid">
+
+          <!-- WORKSHEET -->
+          <div class="karya-card" onclick="window.location.href='./worksheet.html'" style="cursor:pointer;">
+            <div class="karya-content">
+              <h3>📄 Worksheet Magang</h3>
+              <span class="btn-karya">Buka Worksheet</span>
+            </div>
+          </div>
+
+          <!-- GAME CATUR -->
+          <div class="karya-card" onclick="window.location.href='./catur.html'" style="cursor:pointer;">
+            <div class="karya-content">
+              <h3>♟️ Game Catur</h3>
+              <span class="btn-karya">Mainkan</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

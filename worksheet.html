@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Worksheet Magang SMP Chandra Buana</title>
+
+  <style>
+  :root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #9aa4b2;
+  --accent: #4f46e5;
+  --glass: rgba(255, 255, 255, 0.04);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #07122a, #061420 60%);
+  color: #e8eef7;
+}
+
+/* WRAPPER */
+.wrap {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-box img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 18px;
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  box-shadow: 0 6px 22px rgba(3, 7, 18, 0.6);
+}
+
+/* INPUT */
+label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  color: #d9e5f5;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* BUTTON */
+.btn {
+  background: var(--accent);
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover { opacity: 0.9; }
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.small {
+  padding: 8px 14px;
+  font-size: 13px;
+}
+
+/* FOOTER BUTTON */
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  gap: 10px;
+}
+
+/* PREVIEW MODAL */
+#previewModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#previewBox {
+  background: white;
+  color: black;
+  padding: 20px;
+  width: 800px;
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 14px;
+}
+
+/* SELECT STYLING */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='20' width='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 20,0 10,12'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+select option {
+  background: #0f1724;
+  color: white;
+  padding: 10px;
+}
+
+/* ========================
+   RESPONSIVE MOBILE FIX
+   ======================== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 0;
+  }
+
+  .wrap {
+    padding: 14px;
+  }
+
+  /* HEADER MOBILE */
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .brand p {
+    font-size: 14px;
+    margin-top: -4px;
+  }
+
+  .logo-box img {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* CARD MOBILE */
+  .card {
+    padding: 14px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input, textarea, select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* BUTTON MOBILE */
+  footer {
+    flex-direction: column;
+  }
+
+  footer .btn {
+    width: 100%;
+  }
+
+  /* MODAL MOBILE */
+  #previewBox {
+    width: 92%;
+    padding: 14px;
+    border-radius: 10px;
+  }
+}
+
+/* === FIX LOGO BESAR & HEADER BERANTAKAN === */
+header .brand img {
+  width: 65px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* === MOBILE FULL FIX === */
+@media (max-width: 600px) {
+
+  header {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .brand {
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+
+  header .brand img {
+    width: 55px !important;
+    height: auto !important;
+  }
+
+  .brand h1 {
+    font-size: 18px !important;
+    line-height: 22px !important;
+    margin: 0 !important;
+  }
+
+  .brand p {
+    font-size: 13px !important;
+    margin-top: 2px !important;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .header-actions .btn {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="logo-box">
+        <img src="CB.png" alt="Logo" />
+      </div>
+      <div>
+        <h1>Worksheet Magang — SMP Chandra Buana</h1>
+        <p>Formulir Observasi & Persiapan Profesi</p>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="btn small" id="tentangBtn">Tentang</button>
+      <button class="btn small" id="saveDraft">Simpan Draft</button>
+      <button class="btn small" id="resetBtn">Reset</button>
+    </div>
+  </header>
+
+  <form id="mainForm" class="card" autocomplete="off">
+
+    <h2>Identitas Siswa</h2>
+
+    <label>Nama</label>
+    <input id="siswaNama" type="text">
+
+    <label>Kelas</label>
+    <input id="siswaKelas" type="text">
+
+    <label>Alamat</label>
+    <input id="siswaAlamat" type="text">
+
+    <section>
+      <h2>1. Data Tempat Magang</h2>
+
+      <label>Nama Tempat Magang</label>
+      <input id="namaTempat" type="text">
+
+      <label>Pembimbing</label>
+      <input id="pembimbing" type="text">
+
+      <label>Alamat</label>
+      <input id="alamat" type="text">
+
+      <label>Jenis Kegiatan</label>
+      <input id="jenisKegiatan" type="text">
+
+      <label>Bahan / Alat</label>
+      <input id="bahanAlat" type="text">
+
+      <label>Jumlah Produksi</label>
+      <input id="jumlahProduksi" type="text">
+
+      <label>Jumlah Tenaga Kerja</label>
+      <input id="jumlahTenaga" type="text">
+
+      <label>Daerah Pemasaran</label>
+      <input id="daerahPemasaran" type="text">
+
+    </section>
+
+    <section>
+      <h2>2. Informasi Profesi</h2>
+
+      <label>Pilih Profesi</label>
+      <div class="select-wrap">
+        <select id="profesiSelect">
+          <option value="">-- Pilih Profesi --</option>
+          <option>💻 Programmer</option>
+          <option>🎨 MultiMedia</option>
+          <option>📚 Pendidikan</option>
+          <option>🔧 Otomotif</option>
+          <option>📁 Administrasi</option>
+          <option>🌱 Hidroponik</option>
+          <option>💼 Wirausaha</option>
+          <option>🩺 Kesehatan</option>
+          <option value="lain">✏️ Lainnya</option>
+        </select>
+      </div>
+
+      <input id="profesiLain" type="text" placeholder="Isi profesi lain" style="display:none">
+
+      <label>Proses Menjadi</label>
+      <textarea id="prosesMenjadi"></textarea>
+
+      <label>Lingkup Kerja</label>
+      <textarea id="lingkupKerja"></textarea>
+
+      <label>Tantangan</label>
+      <textarea id="tantangan"></textarea>
+
+      <label>Peran di Masyarakat</label>
+      <textarea id="peranMasyarakat"></textarea>
+    </section>
+
+    <section>
+      <h2>3. Persiapan & Peralatan</h2>
+      <label>Persiapan</label>
+      <textarea id="persiapan"></textarea>
+
+      <label>Peralatan</label>
+      <textarea id="peralatan"></textarea>
+    </section>
+
+    <footer>
+      <button type="button" class="btn" id="submitBtn">Simpan PDF</button>
+      <button type="button" class="btn ghost" id="previewBtn">Pratinjau</button>
+    </footer>
+
+  </form>
+</div>
+
+<div id="previewModal">
+  <div id="previewBox"></div>
+</div>
+
+<script>
+// ====== Helper untuk ambil elemen ======
+const $ = (id) => document.getElementById(id);
+
+// ====== Show input profesi lainnya ======
+$("profesiSelect").onchange = () => {
+  $("profesiLain").style.display =
+    $("profesiSelect").value === "lain" ? "block" : "none";
+};
+
+// ====== Logo ======
+const LOGO_URL = "CB.png";
+
+// ====== Ambil nilai form dengan aman ======
+function getValue(id) {
+  return $(id) ? $(id).value : "";
+}
+
+// ====== Build Preview ======
+function buildPreview() {
+  const profesiSelect = getValue("profesiSelect");
+  const profesi =
+    profesiSelect === "lain" ? getValue("profesiLain") : profesiSelect;
+
+  return `
+    <div style="text-align:center; margin-bottom:20px;">
+      <img src="${LOGO_URL}" style="width:90px; margin-bottom:10px;" />
+      <h2>Worksheet Magang SMP Chandra Buana</h2>
+    </div>
+
+    <h3>Identitas Siswa</h3>
+    Nama: ${getValue("siswaNama")}<br>
+    Kelas: ${getValue("siswaKelas")}<br>
+    Alamat: ${getValue("siswaAlamat")}<br><br>
+
+    <h3>Data Tempat Magang</h3>
+    Nama Tempat: ${getValue("namaTempat")}<br>
+    Pembimbing: ${getValue("pembimbing")}<br>
+    Alamat: ${getValue("alamat")}<br>
+    Jenis Kegiatan: ${getValue("jenisKegiatan")}<br>
+    Bahan / Alat: ${getValue("bahanAlat")}<br>
+    Jumlah Produksi: ${getValue("jumlahProduksi")}<br>
+    Tenaga Kerja: ${getValue("jumlahTenaga")}<br>
+    Daerah Pemasaran: ${getValue("daerahPemasaran")}<br><br>
+
+    <h3>Profesi</h3>
+    Profesi: ${profesi}<br>
+    Proses Menjadi: ${getValue("prosesMenjadi")}<br>
+    Lingkup Kerja: ${getValue("lingkupKerja")}<br>
+    Tantangan: ${getValue("tantangan")}<br>
+    Peran Masyarakat: ${getValue("peranMasyarakat")}<br><br>
+
+    <h3>Persiapan & Peralatan</h3>
+    Persiapan: ${getValue("persiapan")}<br>
+    Peralatan: ${getValue("peralatan")}<br>
+  `;
+}
+
+// ====== Tampilkan Preview ======
+$("previewBtn").onclick = () => {
+  $("previewBox").innerHTML = buildPreview();
+  $("previewModal").style.display = "flex";
+};
+
+// ====== Tutup modal hanya jika klik area gelap ======
+$("previewModal").addEventListener("click", (e) => {
+  if (e.target.id === "previewModal") {
+    $("previewModal").style.display = "none";
+  }
+});
+
+// ====== Cetak PDF ======
+$("submitBtn").onclick = () => {
+  const html = buildPreview();
+  const win = window.open("", "_blank");
+  win.document.write(`
+    <html>
+      <head><title>Worksheet Magang</title></head>
+      <body>${html}</body>
+    </html>
+  `);
+  win.document.close();
+  win.focus();
+  win.print();
+};
+
+// ====== Simpan Draft ======
+$("saveDraft").onclick = () => {
+  const form = $("mainForm");
+  const data = {};
+
+  // Ambil semua nilai berdasarkan id
+  [...form.querySelectorAll("input, textarea, select")].forEach((el) => {
+    if (el.id) data[el.id] = el.value;
+  });
+
+  localStorage.setItem("draftMagang", JSON.stringify(data));
+  alert("Draft berhasil disimpan.");
+};
+
+// ====== Load Draft ======
+window.onload = () => {
+  const saved = localStorage.getItem("draftMagang");
+  if (!saved) return;
+
+  const data = JSON.parse(saved);
+  for (let id in data) {
+    if ($(id)) $(id).value = data[id];
+  }
+};
+
+// ====== Reset ======
+$("resetBtn").onclick = () => {
+  if (confirm("Yakin ingin mereset semua data?")) {
+    $("mainForm").reset();
+    localStorage.removeItem("draftMagang");
+  }
+};
+
+</script>
+
+<script>
+  document.getElementById("tentangBtn").onclick = () => {
+    window.location.href = "https://akhdanfaqih.unaux.com/";
+  };
+</script>
+</body>
+</html>
